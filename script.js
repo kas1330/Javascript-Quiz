@@ -32,3 +32,36 @@ THEN I can save my initials and score*/
 //Game ends when all questions are answered or when time runs out
 //Prompt to enter initials
 //Save score and initials in local storage
+
+var questionsHere = document.querySelector('#questions-here');
+
+const myQuestions = [
+    {
+      question: "Who invented JavaScript?",
+      answers: {
+        a: "one",
+        b: "two",
+        c: "three"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which one of these is a JavaScript package manager?",
+      answers: {
+        a: "one",
+        b: "two",
+        c: "three"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which tool can you use to ensure code quality?",
+      answers: {
+        a: "one",
+        b: "two",
+        c: "three"
+        d: "four"
+      },
+      correctAnswer: "d"
+    }
+  ];
