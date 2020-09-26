@@ -34,6 +34,7 @@ THEN I can save my initials and score*/
 //Save score and initials in local storage
 
 var questionsHere = document.querySelector('#questions-here');
+var startBtn = document.querySelector("#start");
 
 const myQuestions = [
     {
@@ -59,9 +60,23 @@ const myQuestions = [
       answers: {
         a: "one",
         b: "two",
-        c: "three"
+        c: "three",
         d: "four"
       },
       correctAnswer: "d"
     }
   ];
+
+  function questionIterator(){
+
+    console.log('Function question iterator is running.');
+
+    var elem = document.querySelector("#start");
+    elem.parentNode.removeChild(elem);
+
+    return;
+
+  }
+
+  startBtn.addEventListener("click", questionIterator);
+
