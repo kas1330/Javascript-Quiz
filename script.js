@@ -1,9 +1,63 @@
 
-function startGame(){
+var counter;
+var score;
 
+var startbtn = document.getElementById('start-btn');
+var questionBox = document.getElementById('question-container');
+var questionEl = document.getElementById('question');
+var answerBtnEl = document.getElementById('answer-button');
+startbtn.addEventListener('click', startQuiz);
+
+const myQuestions = [
+    {
+      question: "Question 1?",
+      answers: {
+        a: "one",
+        b: "two",
+        c: "three",
+        d: "four"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Question 2?",
+      answers: {
+        a: "one",
+        b: "two",
+        c: "three",
+        d: "four"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Question 3?",
+      answers: {
+        a: "one",
+        b: "two",
+        c: "three",
+        d: "four"
+      },
+      correctAnswer: "d"
+    }
+  ];
+
+function startQuiz(){
+    console.log("Game is running");
+    startbtn.classList.add('hidden');
+    questionBox.classList.remove('hidden');
+    setQuestion();
 }
 
 function setQuestion(){
+
+
+}
+
+function chooseAnswer(){
+
+}
+
+function displayQuestion(){
 
 }
 
