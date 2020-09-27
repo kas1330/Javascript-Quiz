@@ -1,6 +1,4 @@
 # Javascript-Quiz
 
-1. Made an object to hold all the questions and answers.
-2. Make needed variables.
-3. Have the event listener call the questionIterator function.
-4. Make start button disappear after it's clicked.
+1. Made an index.html file that reflects everything the pages will need.
+2. Modified an existing CSS file to be used here.
