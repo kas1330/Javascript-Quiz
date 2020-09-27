@@ -88,6 +88,11 @@ const myQuestions = [
 
     for(var i = 0; i < myQuestions.length; i++){
 
+       var q = myQuestions[i];
+       var newEl = document.createElement('#card-header');
+       questionsHere.appendChild(q.question);
+       console.log('Question is: '. q.question); 
+
     }
 
     return;
