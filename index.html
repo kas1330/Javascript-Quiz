@@ -13,26 +13,37 @@
           <h1>Javascript Quiz</h1>
         </header>
         
-          <div class="title-page">
+        <!-- Page displaying the introduction -->
+          <div id ="title-page">
             <h2 id = 'questionHeader'>Answer questions as quickly and accurately as possible.</h2>
+            <button id="start" class="btn">Start Quiz</button>
           </div>
          
-          <div class="question-page">
-
-              <h2 id = question class = 'hidden'></h2>
-             
+          <!-- Page displaying questions and answer choices -->
+          <div id ="question-page">
+              <h2 id = question class = 'hidden'></h2>    
               <ul>
-                  <li class = 'hidden'><button id = 'answer1' class = 'hidden'></button></li>
-                  <li class = 'hidden'><button id = 'answer2' class = 'hidden'></button></li>
-                  <li class = 'hidden'><button id = 'answer3' class = 'hidden'></button></li>
-                  <li class = 'hidden'><button id = 'answer4' class = 'hidden'></button></li>
+                  <li class = 'hidden'><button id = 'answer1' ></button></li>
+                  <li class = 'hidden'><button id = 'answer2' ></button></li>
+                  <li class = 'hidden'><button id = 'answer3' ></button></li>
+                  <li class = 'hidden'><button id = 'answer4' ></button></li>
               </ul>
-
           </div> 
-          <div class="card-footer">
+
+          <!-- Page showing the score prompting for initials  -->
+          <div id = 'reult-page' class = 'hidden'></div>
+
+          <!-- Page showing all high scores recorded in local storage -->
+          <div id = 'highscore-page' class = 'hidden'></div>
+         
+         
+         
+         
+         
+          <!-- <div class="card-footer">
             <button id="start" class="btn">Start Quiz</button>
           
-        </div>
+        </div> -->
       </div>
       <script src="script.js"></script>
 </body>
