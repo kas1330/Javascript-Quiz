@@ -32,6 +32,9 @@ header {
 
 
 .btn {
+    
+  justify-content: center;
+  align-items: center;
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
@@ -45,6 +48,7 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
+
 }
 
 button[disabled] {
