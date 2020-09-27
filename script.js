@@ -96,8 +96,12 @@ const myQuestions = [
       questionPos.append(q.question);
     //   console.log('Question is: '. q.question); 
 
-      var answerPos =document.querySelector('#answer-section');
-      answerPos.append(q.answer1);
+    q.answers.forEach(function => {
+        
+    });
+
+    //   var answerPos =document.querySelector('#answer-section');
+    //   answerPos.append(q.answer1);
     //   console.log('Question is: '. q.question); 
     }
 
