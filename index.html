@@ -6,45 +6,47 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <title>Javascript Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="wrapper">
         <header>
           <h1>Javascript Quiz</h1>
         </header>
+
+        <div id= 'question-container' class = 'hidden'>
+            <div id = 'question'>Question</div>
+            <div id = 'answer-button' class = 'btn-grid'>
+                <button class = 'btn'>Answer 1</button>
+            </div>
+        </div>
+
+    </div>
         
-        <!-- Page displaying the introduction -->
-          <div id ="title-page">
-            <h2 id = 'into'>Answer questions as quickly and accurately as possible.</h2>
+        <!-- Page displaying the introduction
+          <div id ="question-container">
             <button id="start" class="btn">Start Quiz</button>
           </div>
          
-          <!-- Page displaying questions and answer choices -->
+           Page displaying questions and answer choices 
           <div id ="question-page" class = 'hidden'>
               <h2 id = 'question-class'></h2>    
               <div id = 'answer-section'>
-                  <!-- <li><button class = 'btn' id = 'answer1' ></button></li>
+                  <li><button class = 'btn' id = 'answer1' ></button></li>
                   <li><button class = 'btn' id = 'answer2' ></button></li>
                   <li><button class = 'btn' id = 'answer3' ></button></li>
-                  <li><button class = 'btn' id = 'answer4' ></button></li> -->
+                  <li><button class = 'btn' id = 'answer4' ></button></li> 
                   </div>
           </div> 
 
-          <!-- Page showing the score prompting for initials  -->
+           Page showing the score prompting for initials  
           <div id = 'result-page' class = 'hidden'></div>
 
-          <!-- Page showing all high scores recorded in local storage -->
+           Page showing all high scores recorded in local storage 
           <div id = 'highscore-page' class = 'hidden'></div>
          
-         
-         
-         
-         
-          <!-- <div class="card-footer">
-            <button id="start" class="btn">Start Quiz</button>
-          
-        </div> -->
-      </div>
+        
+      </div> -->
       <script src="script.js"></script>
 </body>
 </html>

@@ -96,7 +96,7 @@ const myQuestions = [
       questionPos.append(q.question);
     //   console.log('Question is: '. q.question); 
 
-      var answerPos =document.querySelector('#answer1');
+      var answerPos =document.querySelector('#answer-section');
       answerPos.append(q.answer1);
     //   console.log('Question is: '. q.question); 
     }
