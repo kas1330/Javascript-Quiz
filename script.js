@@ -19,7 +19,7 @@ const myQuestions = [
       },
       correctAnswer: "c"
     },
-    {
+   /* {
       question: "Question 2?",
       answers: {
         a: "one",
@@ -38,7 +38,7 @@ const myQuestions = [
         d: "four"
       },
       correctAnswer: "d"
-    }
+    }*/
   ];
 
 function startQuiz(){
@@ -49,7 +49,7 @@ function startQuiz(){
 }
 
 function setQuestion(){
-
+    displayQuestion();
 
 }
 
@@ -58,7 +58,7 @@ function chooseAnswer(){
 }
 
 function displayQuestion(){
-
+    questionEl.innerText = myQuestions[0].question;
 }
 
 
