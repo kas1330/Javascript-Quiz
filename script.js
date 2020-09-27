@@ -33,7 +33,8 @@ THEN I can save my initials and score*/
 //Prompt to enter initials
 //Save score and initials in local storage
 
-var questionsHere = document.querySelector('#questions-here');
+var answersHere = document.querySelector('#card-body');
+var questionsHere = document.querySelector('#card-header');
 var startBtn = document.querySelector("#start");
 
 const myQuestions = [
@@ -70,12 +71,26 @@ const myQuestions = [
   function questionIterator(){
 
     console.log('Function question iterator is running.');
+    
+    //Removes the start button
 
     var elem = document.querySelector("#start");
     elem.parentNode.removeChild(elem);
 
-    return;
+    //For each loop to go through all the questions
 
+    // myQuestions.forEach(myFunction);
+
+    // function myFunction(item, index){
+    //     console.log('Inside the forEach loop: ', item, index);
+    //     document.getElementById('card-body').innerHTML;
+    // }
+
+    for(var i = 0; i < myQuestions.length; i++){
+
+    }
+
+    return;
   }
 
   startBtn.addEventListener("click", questionIterator);
