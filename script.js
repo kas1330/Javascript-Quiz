@@ -33,8 +33,10 @@ THEN I can save my initials and score*/
 //Prompt to enter initials
 //Save score and initials in local storage
 
-var answersHere = document.querySelector('#card-body');
-var questionsHere = document.querySelector('#card-header');
+var titlePage = document.querySelector('#title-page');
+var questionPage = document.querySelector('#question-page');
+var resultsPage = document.querySelector('#result-page');
+var hsPage = document.querySelector('#highscore-page');
 var startBtn = document.querySelector("#start");
 
 const myQuestions = [
