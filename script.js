@@ -1,13 +1,22 @@
 
 var counter;
-var score;
+var score=0;
+
+//current index of myQuestions
+var i = 0;
 
 var startbtn = document.getElementById('start-btn');
 var nextbtn = document.getElementById('next-btn');
 var questionBox = document.getElementById('question-container');
 var questionEl = document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-button');
+
 startbtn.addEventListener('click', startQuiz);
+nextbtn.addEventListener('click', () => {
+    i++;
+    console.log("we are on index: ", i);
+    setQuestion();
+})
 
 const myQuestions = [
     {
@@ -20,26 +29,26 @@ const myQuestions = [
     ],
     //   correctAnswer: "c"
     },
-   /* {
+    {
       question: "Question 2?",
-      answers: {
-        a: "one",
-        b: "two",
-        c: "three",
-        d: "four"
-      },
-      correctAnswer: "c"
+      answers: [
+        {answerTxt: "one", correct: false},
+        {answerTxt: "two", correct: false},
+        {answerTxt: "three", correct: true},
+        {answerTxt: "four", correct: false}
+      ],
+      //correctAnswer: "c"
     },
     {
       question: "Question 3?",
-      answers: {
-        a: "one",
-        b: "two",
-        c: "three",
-        d: "four"
-      },
-      correctAnswer: "d"
-    }*/
+      answers: [
+        {answerTxt: "one", correct: false},
+        {answerTxt: "two", correct: false},
+        {answerTxt: "three", correct: false},
+        {answerTxt: "four", correct: true}
+      ]
+      //correctAnswer: "d"
+    }
   ];
 
 function startQuiz(){
@@ -59,7 +68,7 @@ function setQuestion(){
 
 
 function displayQuestion(){
-    q = myQuestions[0];
+    q = myQuestions[i];
     questionEl.innerText = q.question;
     
     q.answers.forEach(answer =>{
@@ -91,9 +100,15 @@ function chooseAnswer(e){
     Array.from(answerBtnEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     })
+    if(myQuestions.length > i + 1){
+    nextbtn.classList.remove('hidden');
+    }
+    //else go to the high score page because questions are over
+
 
 }
 
+//sets the colors to the red or green in theory
 function setStatusClass(element, correct){
      clearStatusClass(element);
      if(correct){
@@ -102,6 +117,11 @@ function setStatusClass(element, correct){
      else{
          element.classList.add('wrong');
      }
+}
+
+function clearStatusClass(element){
+    element.classList.remove('correct');
+    element.classList.remove('wrong');
 }
 
 
