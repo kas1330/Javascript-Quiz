@@ -59,6 +59,7 @@ function startQuiz(){
     setQuestion();
 }
 
+//Resets page, and displays next question and answers
 function setQuestion(){
     resetForm();
     displayQuestion();
@@ -66,12 +67,12 @@ function setQuestion(){
 
 }
 
-
-
 function displayQuestion(){
+    //Current place in the array
     q = myQuestions[i];
     questionEl.innerText = q.question;
-    
+
+    //Display each answer to the current question
     q.answers.forEach(answer =>{
         var button = document.createElement('button');
         button.innerText = answer.answerTxt;
@@ -107,12 +108,17 @@ function chooseAnswer(e){
         score+=10;
         console.log("You chose right, score is now: ", score);
     }
+
+    //else subtract time bc choice was wrong
     setStatusClass(document.body, correct);
     Array.from(answerBtnEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
     })
     if(myQuestions.length > i + 1){
-    nextbtn.classList.remove('hidden');
+    //nextbtn.classList.remove('hidden');
+    console.log("We are in chooseAnswer(), index is: ", i);
+    i++;
+    setQuestion();
     }
     //else go to the high score page because questions are over
 
