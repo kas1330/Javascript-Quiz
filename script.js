@@ -1,22 +1,18 @@
 
-var counter;
+var timer;
 var score=0;
 
 //current index of myQuestions
 var i = 0;
 
 var startbtn = document.getElementById('start-btn');
-var nextbtn = document.getElementById('next-btn');
 var questionBox = document.getElementById('question-container');
 var questionEl = document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-button');
 
+//start button
 startbtn.addEventListener('click', startQuiz);
-nextbtn.addEventListener('click', () => {
-    i++;
-    console.log("we are on index: ", i);
-    setQuestion();
-})
+
 
 //An array of objects where each set of question answers is also an array of objects
 const myQuestions = [
@@ -52,6 +48,7 @@ const myQuestions = [
     }
   ];
 
+ //called when the start button is pressed
 function startQuiz(){
     console.log("startQuiz is running");
     startbtn.classList.add('hidden');
@@ -63,11 +60,11 @@ function startQuiz(){
 function setQuestion(){
     resetForm();
     displayQuestion();
- 
-
 }
 
+// displays current question and answers 
 function displayQuestion(){
+    
     //Current place in the array
     q = myQuestions[i];
     questionEl.innerText = q.question;
@@ -77,10 +74,10 @@ function displayQuestion(){
         var button = document.createElement('button');
         button.innerText = answer.answerTxt;
         button.classList.add('btn');
-        //Check if the answer is right, else subtract time
+
+        //If the answer is correct, adds data attribute to the button element indicating that
         if(answer.correct){
             button.dataset.correct = answer.correct;
-            //score += 10;
             console.log("Score is currently: ", score);
         }
 
@@ -91,13 +88,14 @@ function displayQuestion(){
 
 }
 
+//Resets everything back to default state when it's called
 function resetForm(){
-    nextbtn.classList.add('hidden');
     while(answerBtnEl.firstChild){
         answerBtnEl.removeChild(answerBtnEl.firstChild);
     }
 }
 
+//Checks what was chosen and if it was correct, increases and decreases score
 function chooseAnswer(e){
     console.log("chooseAnswer is running");
     //Which button was chosen
@@ -110,36 +108,17 @@ function chooseAnswer(e){
     }
 
     //else subtract time bc choice was wrong
-    setStatusClass(document.body, correct);
-    Array.from(answerBtnEl.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct);
-    })
+
     if(myQuestions.length > i + 1){
-    //nextbtn.classList.remove('hidden');
     console.log("We are in chooseAnswer(), index is: ", i);
     i++;
     setQuestion();
     }
     //else go to the high score page because questions are over
 
-
 }
 
-//sets the colors to the red or green in theory
-function setStatusClass(element, correct){
-     clearStatusClass(element);
-     if(correct){
-         element.classList.add('correct');
-     }
-     else{
-         element.classList.add('wrong');
-     }
-}
 
-function clearStatusClass(element){
-    element.classList.remove('correct');
-    element.classList.remove('wrong');
-}
 
 
 
