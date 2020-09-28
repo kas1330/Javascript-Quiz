@@ -3,6 +3,7 @@ var counter;
 var score;
 
 var startbtn = document.getElementById('start-btn');
+var nextbtn = document.getElementById('next-btn');
 var questionBox = document.getElementById('question-container');
 var questionEl = document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-button');
@@ -49,14 +50,13 @@ function startQuiz(){
 }
 
 function setQuestion(){
+    resetForm();
     displayQuestion();
+ 
 
 }
 
-function chooseAnswer(e){
 
-
-}
 
 function displayQuestion(){
     q = myQuestions[0];
@@ -75,6 +75,33 @@ function displayQuestion(){
         answerBtnEl.appendChild(button);
     })
 
+}
+
+function resetForm(){
+    nextbtn.classList.add('hidden');
+    while(answerBtnEl.firstChild){
+        answerBtnEl.removeChild(answerBtnEl.firstChild);
+    }
+}
+
+function chooseAnswer(e){
+    var selectedAns = e.target;
+    var correct = selectedAns.dataset.correct;
+    setStatusClass(document.body, correct);
+    Array.from(answerBtnEl.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct);
+    })
+
+}
+
+function setStatusClass(element, correct){
+     clearStatusClass(element);
+     if(correct){
+         element.classList.add('correct');
+     }
+     else{
+         element.classList.add('wrong');
+     }
 }
 
 

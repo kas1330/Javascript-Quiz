@@ -7,4 +7,4 @@
 5. Make start button disappear and questions appear after start
     is clicked.
 6. Display the question.
-7. Display the answers.
+7. Display the answers to that question.
