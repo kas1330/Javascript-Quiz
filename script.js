@@ -18,6 +18,7 @@ nextbtn.addEventListener('click', () => {
     setQuestion();
 })
 
+//An array of objects where each set of question answers is also an array of objects
 const myQuestions = [
     {
       question: "Inside which HTML element do we put the Javascript?",
@@ -27,7 +28,7 @@ const myQuestions = [
         {answerTxt: "c. <script>", correct: true},
         {answerTxt: "d. <scripting>", correct: false}
     ],
-    //   correctAnswer: "c"
+
     },
     {
       question: "Question 2?",
@@ -37,7 +38,7 @@ const myQuestions = [
         {answerTxt: "three", correct: true},
         {answerTxt: "four", correct: false}
       ],
-      //correctAnswer: "c"
+
     },
     {
       question: "Question 3?",
@@ -47,12 +48,12 @@ const myQuestions = [
         {answerTxt: "three", correct: false},
         {answerTxt: "four", correct: true}
       ]
-      //correctAnswer: "d"
+
     }
   ];
 
 function startQuiz(){
-    console.log("Game is running");
+    console.log("startQuiz is running");
     startbtn.classList.add('hidden');
     questionBox.classList.remove('hidden');
     setQuestion();
@@ -78,8 +79,11 @@ function displayQuestion(){
         //Check if the answer is right, else subtract time
         if(answer.correct){
             button.dataset.correct = answer.correct;
+            //score += 10;
+            console.log("Score is currently: ", score);
         }
 
+        //Listening for the answer click
         button.addEventListener('click', chooseAnswer);
         answerBtnEl.appendChild(button);
     })
@@ -94,8 +98,15 @@ function resetForm(){
 }
 
 function chooseAnswer(e){
+    console.log("chooseAnswer is running");
+    //Which button was chosen
     var selectedAns = e.target;
+    //Was answer correct
     var correct = selectedAns.dataset.correct;
+    if(correct){
+        score+=10;
+        console.log("You chose right, score is now: ", score);
+    }
     setStatusClass(document.body, correct);
     Array.from(answerBtnEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct);
