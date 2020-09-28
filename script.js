@@ -10,14 +10,14 @@ startbtn.addEventListener('click', startQuiz);
 
 const myQuestions = [
     {
-      question: "Question 1?",
-      answers: {
-        a: "one",
-        b: "two",
-        c: "three",
-        d: "four"
-      },
-      correctAnswer: "c"
+      question: "Inside which HTML element do we put the Javascript?",
+      answers: [
+        {answerTxt: "a. <js>", correct: false},
+        {answerTxt: "b. <javascript>" , correct: false},
+        {answerTxt: "c. <script>", correct: true},
+        {answerTxt: "d. <scripting>", correct: false}
+    ],
+    //   correctAnswer: "c"
     },
    /* {
       question: "Question 2?",
@@ -53,12 +53,28 @@ function setQuestion(){
 
 }
 
-function chooseAnswer(){
+function chooseAnswer(e){
+
 
 }
 
 function displayQuestion(){
-    questionEl.innerText = myQuestions[0].question;
+    q = myQuestions[0];
+    questionEl.innerText = q.question;
+    
+    q.answers.forEach(answer =>{
+        var button = document.createElement('button');
+        button.innerText = answer.answerTxt;
+        button.classList.add('btn');
+        //Check if the answer is right, else subtract time
+        if(answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+
+        button.addEventListener('click', chooseAnswer);
+        answerBtnEl.appendChild(button);
+    })
+
 }
 
 
