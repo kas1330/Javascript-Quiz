@@ -13,9 +13,11 @@
 10. If answer is correct, add 10 to the score.
 11. When all questions are done, add remaining time to the score
     to get the totalScore.
-12. If time runs out before questions are done, got to highScore
+12. If time runs out before questions are done, got to results
     page.
-13. High Score page should display the score, a textbox to put initials in
+13. Results page should display the score, a textbox to put initials in
     and a submit button.
-14. When the submit button is clicked, the high score should be save in 
+14. When results page displays- questions, answers, and timer should
+    be hidden.
+15. When the submit button is clicked, the high score should be save in 
     local storage and user should be shown a list of their high scores.

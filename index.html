@@ -25,17 +25,22 @@
         <!-- Page showing the score prompting for initials   -->
         <div id = 'result-page' class = 'hidden'>
             <div id= 'your-score'>Score</div>
-            <div id = 'your-initials'>Initials</div>
+                <div id = 'your-initials'>Initials
+                  <input type = text>
+                </div>
+            </div>
             <div id = 'btn-div'>
-                <button class = 'btn' id = 'submit'>Submit</button>
+                <button class = 'btn hidden' id = 'submit'>Submit</button>
             </div>
         </div>
+
+        <!-- Div for timer, to be displayed when start is clicked  -->
+        <div id = 'timer' class = 'hidden timerLayout'></div>
 
         <!-- Page showing all high scores recorded in local storage  -->
         <div id = 'highscore-page' class = 'hidden'></div>
         
-        <!-- Div for timer, to be displayed when start is clicked  -->
-        <div id = 'timer' class = 'hidden'></div>
+
     </div> 
     <script src="script.js"></script>
 </body>

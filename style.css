@@ -72,6 +72,9 @@ button[disabled] {
   float: right;
 }
 
+.timerLayout{
+  float:left;
+}
 
 
 @media (max-width: 690px) {

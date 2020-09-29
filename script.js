@@ -12,6 +12,8 @@ var questionBox = document.getElementById('question-container');
 var questionEl = document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-button');
 var timeDisplay = document.getElementById('timer');
+var resultsDisplay = document.getElementById('result-page');
+var scoresDisplay = document.getElementById('highscore-page')
 
 //start button
 startbtn.addEventListener('click', startQuiz);
@@ -141,12 +143,20 @@ function countdown(){
     }
     timer--;
     timeDisplay.textContent = timer; 
+    if(timer === 0){
+      console.log('Timer = 0 if statement running.');
+      enterInitials();
+    }
   },1000);
 
 }
 
 function enterInitials(){
-  
+  console.log('enterInitials is running.');
+  questionBox.classList.add('hidden');
+  questionEl.classList.add('hidden');
+  timeDisplay.classList.add('hidden');
+  resultsDisplay.classList.remove('hidden');
 }
 
 
