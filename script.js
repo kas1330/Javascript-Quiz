@@ -125,6 +125,7 @@ function chooseAnswer(e){
     else{
       totalScore = score + timer;
       console.log('Total score is: ', totalScore);
+      enterInitials();
     }
 
 }
@@ -145,7 +146,7 @@ function countdown(){
 }
 
 function enterInitials(){
-
+  
 }
 
 
