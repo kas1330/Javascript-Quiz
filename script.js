@@ -9,6 +9,7 @@ var startbtn = document.getElementById('start-btn');
 var questionBox = document.getElementById('question-container');
 var questionEl = document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-button');
+var timeDisplay = document.getElementById('timer');
 
 //start button
 startbtn.addEventListener('click', startQuiz);
@@ -50,6 +51,7 @@ const myQuestions = [
 
  //called when the start button is pressed
 function startQuiz(){
+    countdown();
     console.log("startQuiz is running");
     startbtn.classList.add('hidden');
     questionBox.classList.remove('hidden');
@@ -120,7 +122,7 @@ function chooseAnswer(e){
 
 //Timer function
 function countdown(){
-
+  timeDisplay.classList.remove('hidden');
 }
 
 

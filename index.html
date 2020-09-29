@@ -14,6 +14,7 @@
           <h1>Javascript Quiz</h1>
         </header>
 
+        <!-- Page showing questions and answers -->
         <div id= 'question-container' class = 'hidden'>
             <div id = 'question'>Question</div>
             <div id = 'answer-button' class = 'btn-grid'></div>           
@@ -21,23 +22,15 @@
         <div class = 'start-next'>
             <button id = 'start-btn' class = 'start-btn btn'>Start</button>
         </div>
+        <!-- Page showing the score prompting for initials   -->
+        <div id = 'result-page' class = 'hidden'></div>
 
-    </div>
+        <!-- Page showing all high scores recorded in local storage  -->
+        <div id = 'highscore-page' class = 'hidden'></div>
         
-        <!-- Page displaying the introduction
-          <div id ="question-container">
-            <button id="start" class="btn">Start Quiz</button>
-          </div>
-         
-           
-           Page showing the score prompting for initials  
-          <div id = 'result-page' class = 'hidden'></div>
-
-           Page showing all high scores recorded in local storage 
-          <div id = 'highscore-page' class = 'hidden'></div>
-         
-        
-      </div> -->
-      <script src="script.js"></script>
+        <!-- Div for timer, to be displayed when start is clicked  -->
+        <div id = 'timer' class = 'hidden'>60</div>
+    </div> 
+    <script src="script.js"></script>
 </body>
 </html>
