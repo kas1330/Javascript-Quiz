@@ -1,6 +1,7 @@
 
 var timer = 60;
 var score=0;
+var isWrong = false;
 
 //current index of myQuestions
 var i = 0;
@@ -110,6 +111,9 @@ function chooseAnswer(e){
     }
 
     //else subtract time bc choice was wrong
+    else{
+      isWrong = true;
+    }
 
     if(myQuestions.length > i + 1){
     console.log("We are in chooseAnswer(), index is: ", i);
@@ -124,45 +128,19 @@ function chooseAnswer(e){
 function countdown(){
   timeDisplay.classList.remove('hidden');
   var timerCountdown = setInterval(function(){
+    if(isWrong){
+      console.log("If statement isWrong is running.");
+      timer = timer - 10;
+      isWrong = false;
+    }
     timer--;
     timeDisplay.textContent = timer; 
   },1000);
+
+}
+
+function enterInitials(){
+
 }
 
 
-
-
-
-
-
-
-/*
-    
-//isRightOrWrong
-    //check if user is wrong or right
-         // if (this !== myQuestions[initialQues].correctAnswer) {
-             // time penalty
-                 // time -= 5
-         //}
-    // move to next Q
-         // initialQues++;
-    // do you have more questions?
-        // if(initalQues === myQuestions.length) {
-            //endQuiz()
-        
-    //} else {
-        //questionIterator()
-    //}
-
-//hishScores
-    //get value of input
-    //get  saved scores or, if no saved scores, set to an empty array
-    //make an object to score user data
-    // save to localstorage
-
-//make buttons to populate answers    
-    //var initialQuestion = myQuestions[initialQues]
-    // initialQuestion.answers.forEach(function(i) {
-        //create button
-        //userChoices.textContent = i + answers
-    //})*/
