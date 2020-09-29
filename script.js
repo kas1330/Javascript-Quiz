@@ -123,6 +123,10 @@ function chooseAnswer(e){
 //Timer function
 function countdown(){
   timeDisplay.classList.remove('hidden');
+  var timerCountdown = setInterval(function(){
+    timer--;
+    timeDisplay.textContent = timer; 
+  },1000);
 }
 
 
@@ -133,85 +137,7 @@ function countdown(){
 
 
 /*
-    },
-    {
-      question: "Question 2?",
-      answers: {
-        a: "one",
-        b: "two",
-        c: "three",
-        d: "four"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "Question 3?",
-      answers: {
-        a: "one",
-        b: "two",
-        c: "three",
-        d: "four"
-      },
-      correctAnswer: "d"
-    }
-  ];
-
-  function questionIterator(){
-
-    console.log('Function question iterator is running.');
     
-    //Hides title page
-    titlePage.classList.add('hidden');
-
-    //Unhides question page
-    questionPage.classList.remove('hidden');
-
-    //Add each question to the page
-    for(var i = 0; i < myQuestions.length; i++){
-
-        var q = myQuestions[i];
-        var questionPos = document.querySelector('#question-class');
-
-      questionPos.append(q.question);
-    //   console.log('Question is: '. q.question); 
-
-    // q.answers.forEach(function => {
-        
-    // });
-
-    //   var answerPos =document.querySelector('#answer-section');
-    //   answerPos.append(q.answer1);
-    //   console.log('Question is: '. q.question); 
-    }
-
-
-  }
-
-//   function rightOrWrong(){
-
-//   }
-
-// function endQuiz(){
-
-// }
-
-//   start-btn.addEventListener("click", questionIterator);
-
-// function questionIterator() {
-   //var q = myQuestions[initialQues];
-//}
-
-//loop over choices
-// ereate a button for each choice
-   //var userChoices = document.createElement("button")
-
-// add an onclick event listener to each choice
-     // userChoices.onClick = isRightOrWrong 
-// display on page
-
-//vv a seperate function from questionIterator
-//seperate end quiz function
-
 //isRightOrWrong
     //check if user is wrong or right
          // if (this !== myQuestions[initialQues].correctAnswer) {
