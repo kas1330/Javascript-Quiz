@@ -14,6 +14,9 @@ var answerBtnEl = document.getElementById('answer-button');
 var timeDisplay = document.getElementById('timer');
 var resultsDisplay = document.getElementById('result-page');
 var scoresDisplay = document.getElementById('highscore-page')
+var submitBtnEl = document.getElementById('submit');
+var intialsVal =  document.getElementById('your-initials').value;
+var yourScore = document.getElementById('your-score');
 
 //start button
 startbtn.addEventListener('click', startQuiz);
@@ -157,6 +160,9 @@ function enterInitials(){
   questionEl.classList.add('hidden');
   timeDisplay.classList.add('hidden');
   resultsDisplay.classList.remove('hidden');
+  submitBtnEl.classList.remove('hidden');
+  yourScore.innerText = totalScore;
+  // console.log('Initials entered: ', intialsVal);
 }
 
 
