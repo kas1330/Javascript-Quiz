@@ -1,5 +1,5 @@
 
-var timer;
+var timer = 60;
 var score=0;
 
 //current index of myQuestions
@@ -118,6 +118,10 @@ function chooseAnswer(e){
 
 }
 
+//Timer function
+function countdown(){
+
+}
 
 
 
@@ -125,27 +129,8 @@ function chooseAnswer(e){
 
 
 
-/*Vars for pages
-var titlePage = document.querySelector('#title-page');
-var questionPage = document.querySelector('#question-page');
-var resultsPage = document.querySelector('#result-page');
-var hsPage = document.querySelector('#highscore-page');
-var startBtn = document.querySelector("#start");
 
-//Vars for elements on pages
-var questionPos = document.querySelector('#question-class');
-var initialQues = 0;
-
-const myQuestions = [
-    {
-      question: "Question 1?",
-      answers: {
-        a: "one",
-        b: "two",
-        c: "three",
-        d: "four"
-      },
-      correctAnswer: "c"
+/*
     },
     {
       question: "Question 2?",
