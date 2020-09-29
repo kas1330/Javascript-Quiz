@@ -7,19 +7,24 @@ var isWrong = false;
 //current index of myQuestions
 var i = 0;
 
+//Buttons
 var startbtn = document.getElementById('start-btn');
+var submitbtn = document.getElementById('submit');
+
+//Divs
 var questionBox = document.getElementById('question-container');
 var questionEl = document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-button');
 var timeDisplay = document.getElementById('timer');
 var resultsDisplay = document.getElementById('result-page');
 var scoresDisplay = document.getElementById('highscore-page')
-var submitBtnEl = document.getElementById('submit');
-var intialsVal =  document.getElementById('your-initials').value;
 var yourScore = document.getElementById('your-score');
 
-//start button
+//button event listeners
 startbtn.addEventListener('click', startQuiz);
+submitbtn.addEventListener('click', function(event){
+  storeScore(document.getElementById('initials').value);
+});
 
 
 //An array of objects where each set of question answers is also an array of objects
@@ -154,15 +159,24 @@ function countdown(){
 
 }
 
+//Brings up results page where you enter you initials
 function enterInitials(){
   console.log('enterInitials is running.');
   questionBox.classList.add('hidden');
   questionEl.classList.add('hidden');
   timeDisplay.classList.add('hidden');
   resultsDisplay.classList.remove('hidden');
-  submitBtnEl.classList.remove('hidden');
+  submitbtn.classList.remove('hidden');
   yourScore.innerText = totalScore;
   // console.log('Initials entered: ', intialsVal);
+}
+
+function storeScore(value){
+  // console.log('Submit btn pressed.');
+  // var initialsVal =  document.getElementById('your-initials').value;
+  // console.log('Initials you input are: ', initialsVal);
+  console.log('the initials input are ', value);
+  
 }
 
 
