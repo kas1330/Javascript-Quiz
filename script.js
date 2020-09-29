@@ -1,6 +1,7 @@
 
 var timer = 60;
 var score=0;
+var totalScore;
 var isWrong = false;
 
 //current index of myQuestions
@@ -110,7 +111,7 @@ function chooseAnswer(e){
         console.log("You chose right, score is now: ", score);
     }
 
-    //else subtract time bc choice was wrong
+    //else set var to true so time is subtracted
     else{
       isWrong = true;
     }
@@ -121,6 +122,10 @@ function chooseAnswer(e){
     setQuestion();
     }
     //else go to the high score page because questions are over
+    else{
+      totalScore = score + timer;
+      console.log('Total score is: ', totalScore);
+    }
 
 }
 
