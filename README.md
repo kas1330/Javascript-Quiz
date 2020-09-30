@@ -22,3 +22,9 @@
 15. When the submit button is clicked, the high score should be save in 
     local storage and user should be shown a list of their high scores.
 16. The high scores should be shown from Highest to lowest.
+
+Link to deployed app: https://kas1330.github.io/Javascript-Quiz/
+
+<img src='jsQuiz.png' alt='Start button page of quiz'>
+
+<img src='jsQuiz2.png' alt='Question page of quiz'>
