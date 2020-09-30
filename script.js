@@ -163,6 +163,7 @@ function chooseAnswer(e){
       totalScore = score + timer;
       console.log('Total score is: ', totalScore);
       enterInitials();
+
     }
 
 }
@@ -180,7 +181,7 @@ function countdown(){
     timeDisplay.textContent = timer; 
     if(timer === 0){
       console.log('Timer = 0 if statement running.');
-      enterInitials();
+      // enterInitials(timerCountdown);
       clearInterval(timerCountdown);
     }
   },1000);
@@ -189,6 +190,8 @@ function countdown(){
 
 //Brings up results page where you enter you initials
 function enterInitials(){
+
+  // clearInterval(timerCountdown);
   console.log('enterInitials is running.');
   questionBox.classList.add('hidden');
   questionEl.classList.add('hidden');
@@ -206,16 +209,19 @@ function storeScore(value){
 
   console.log('the initials input are ', value, 'Score: ', totalScore);
 
-  
-  for(var j = 0; j<highscoreArr.length; j++){
-    var s = highscoreArr[j];
-    s.userInitials = value;
-    s.score = totalScore;
-    localStorage.setItem('highscores', JSON.stringify(highscoreArr));
-    var storedScores = JSON.parse(localStorage.getItem("highScores"));
+    // s.userInitials = value;
+    // s.score = totalScore;
+    // localStorage.setItem('highscores', JSON.stringify(highscoreArr));
+    // var storedScores = JSON.parse(localStorage.getItem("highScores"));
 
+  var storedScores = JSON.parse(localStorage.getItem('highscoreArr'));
+  var newScore = {userInitials: value, score: totalScore};
+  console.log(highscoreArr);
+  storedScores.push(newScore);
+  localStorage.setItem('highscoreArr', JSON.stringify(highscoreArr));
 
-    
+  // for(var j = 0; j<highscoreArr.length; j++){
+    // var s = highscoreArr[j];  
     // var p = document.createElement('p');
     // p.innerText = s.userInitials, s.score;
     // var p = document.createElement('p');
@@ -224,7 +230,7 @@ function storeScore(value){
 
     
 
-  }
+  // }
 }
 
 
