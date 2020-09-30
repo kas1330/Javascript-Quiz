@@ -213,12 +213,13 @@ function storeScore(value){
     // s.score = totalScore;
     // localStorage.setItem('highscores', JSON.stringify(highscoreArr));
     // var storedScores = JSON.parse(localStorage.getItem("highScores"));
-
+  localStorage.setItem('highscoreArr', JSON.stringify(highscoreArr));
   var storedScores = JSON.parse(localStorage.getItem('highscoreArr'));
   var newScore = {userInitials: value, score: totalScore};
-  console.log(highscoreArr);
+  console.log("Before push: ", highscoreArr);
   storedScores.push(newScore);
-  localStorage.setItem('highscoreArr', JSON.stringify(highscoreArr));
+  console.log("After push: ", highscoreArr);
+
 
   // for(var j = 0; j<highscoreArr.length; j++){
     // var s = highscoreArr[j];  
