@@ -3,6 +3,9 @@ var timer = 60;
 var score=0;
 var totalScore;
 var isWrong = false;
+var highscoreArr = [
+  {userInitials: "", score: ""}
+];
 
 //current index of myQuestions
 var i = 0;
@@ -19,6 +22,9 @@ var timeDisplay = document.getElementById('timer');
 var resultsDisplay = document.getElementById('result-page');
 var scoresDisplay = document.getElementById('highscore-page')
 var yourScore = document.getElementById('your-score');
+var highscoreList = document.getElementById('highscore-list');
+
+
 
 //button event listeners
 startbtn.addEventListener('click', startQuiz);
@@ -172,11 +178,26 @@ function enterInitials(){
 }
 
 function storeScore(value){
-  // console.log('Submit btn pressed.');
-  // var initialsVal =  document.getElementById('your-initials').value;
-  // console.log('Initials you input are: ', initialsVal);
-  console.log('the initials input are ', value);
-  
+  resultsDisplay.classList.add('hidden');
+  submitbtn.classList.add('hidden');
+  scoresDisplay.classList.remove('hidden');
+
+  console.log('the initials input are ', value, 'Score: ', totalScore);
+
+  localStorage.setItem('highscores', highscoreArr);
+
+  for(var j = 0; j<highscoreArr.length; j++){
+    var s = highscoreArr[j];
+    s.userInitials = value;
+    s.score = totalScore;
+    // var p = document.createElement('p');
+    // p.innerText = s.userInitials, s.score;
+    var p = document.createElement('p');
+    p.textContent(${s.userInitials}: ${s.score}));
+    highscoreList.appendChild(p);
+    
+
+  }
 }
 
 
