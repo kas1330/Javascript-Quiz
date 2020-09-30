@@ -209,10 +209,7 @@ function storeScore(value){
 
   console.log('the initials input are ', value, 'Score: ', totalScore);
 
-    // s.userInitials = value;
-    // s.score = totalScore;
-    // localStorage.setItem('highscores', JSON.stringify(highscoreArr));
-    // var storedScores = JSON.parse(localStorage.getItem("highScores"));
+    
   var storedScores = JSON.parse(localStorage.getItem('highscoreArr')) || [];
   var newScore = {userInitials: value, score: totalScore};
   // console.log("Before push: ", storedScores);
@@ -221,21 +218,25 @@ function storeScore(value){
 
   console.log("After push: ", storedScores);
 
-
+  //Sort the scores in the array from highest to lowest
+  sortScores(storedScores);
+ 
+  //list each element in the array on the highscores page
   for(var j = 0; j<storedScores.length; j++){
     var s = storedScores[j];  
     var l = document.createElement('p');
     var initials = s.userInitials
     l.innerText = (initials + ': ' + s.score);
-    // l.innerText += (s.score);
-    // p.innerText = s.userInitials, s.score;
-    // var p = document.createElement('p');
-    // p.textContent(${s.userInitials}: ${s.score}));
+
     highscoreList.appendChild(l);
 
-    
-
   }
+}
+
+function sortScores(x){
+  x.sort(function(a,b) {
+    return b.score-a.score
+  });
 }
 
 

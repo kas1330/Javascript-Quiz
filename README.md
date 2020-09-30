@@ -21,3 +21,4 @@
     be hidden.
 15. When the submit button is clicked, the high score should be save in 
     local storage and user should be shown a list of their high scores.
+16. The high scores should be shown from Highest to lowest.
