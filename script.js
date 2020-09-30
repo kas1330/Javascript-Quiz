@@ -224,8 +224,10 @@ function storeScore(value){
 
   for(var j = 0; j<storedScores.length; j++){
     var s = storedScores[j];  
-    var l = document.createElement('li');
-    l.innerText = ('I just got added to the page');
+    var l = document.createElement('p');
+    var initials = s.userInitials
+    l.innerText = (initials + ': ' + s.score);
+    // l.innerText += (s.score);
     // p.innerText = s.userInitials, s.score;
     // var p = document.createElement('p');
     // p.textContent(${s.userInitials}: ${s.score}));
