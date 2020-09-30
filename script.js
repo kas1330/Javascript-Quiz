@@ -176,7 +176,8 @@ function countdown(){
     timeDisplay.textContent = timer; 
     if(timer === 0){
       // console.log('Timer = 0 if statement running.');
-      clearInterval(timerCountdown);
+      enterInitials();
+      clearInterval(timerCountdown);    
     }
   },1000);
 

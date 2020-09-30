@@ -22,6 +22,8 @@
 15. When the submit button is clicked, the high score should be save in 
     local storage and user should be shown a list of their high scores.
 16. The high scores should be shown from Highest to lowest.
+17. Just discovered that results page does not automatically come up if 
+    time hits 0. I can't figure out why.
 
 Link to deployed app: https://kas1330.github.io/Javascript-Quiz/
 
