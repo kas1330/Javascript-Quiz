@@ -3,9 +3,6 @@ var timer = 60;
 var score=0;
 var totalScore;
 var isWrong = false;
-// var highscoreArr = [
-//   {userInitials: "", score: ""}
-// ];
 
 //current index of myQuestions
 var i = 0;
@@ -23,8 +20,6 @@ var resultsDisplay = document.getElementById('result-page');
 var scoresDisplay = document.getElementById('highscore-page')
 var yourScore = document.getElementById('your-score');
 var highscoreList = document.getElementById('highscore-list');
-
-
 
 //button event listeners
 startbtn.addEventListener('click', startQuiz);
@@ -71,7 +66,7 @@ const myQuestions = [
         {answerTxt: "a. alert('Hello World')", correct: true},
         {answerTxt: "b. prompt('Hello World')", correct: false},
         {answerTxt: "c. msg('Hello World')", correct: false},
-        {answerTxt: "d. alerBox('Hello World')", correct: false}
+        {answerTxt: "d. alertBox('Hello World')", correct: false}
       ]
 
     },
@@ -119,7 +114,7 @@ function displayQuestion(){
         //If the answer is correct, adds data attribute to the button element indicating that
         if(answer.correct){
             button.dataset.correct = answer.correct;
-            console.log("Score is currently: ", score);
+            // console.log("Score is currently: ", score);
         }
 
         //Listening for the answer click
@@ -145,7 +140,7 @@ function chooseAnswer(e){
     var correct = selectedAns.dataset.correct;
     if(correct){
         score+=10;
-        console.log("You chose right, score is now: ", score);
+        // console.log("You chose right, score is now: ", score);
     }
 
     //else set var to true so time is subtracted
@@ -154,14 +149,14 @@ function chooseAnswer(e){
     }
 
     if(myQuestions.length > i + 1){
-    console.log("We are in chooseAnswer(), index is: ", i);
+    // console.log("We are in chooseAnswer(), index is: ", i);
     i++;
     setQuestion();
     }
     //else go to the high score page because questions are over
     else{
       totalScore = score + timer;
-      console.log('Total score is: ', totalScore);
+      // console.log('Total score is: ', totalScore);
       enterInitials();
 
     }
@@ -180,8 +175,7 @@ function countdown(){
     timer--;
     timeDisplay.textContent = timer; 
     if(timer === 0){
-      console.log('Timer = 0 if statement running.');
-      // enterInitials(timerCountdown);
+      // console.log('Timer = 0 if statement running.');
       clearInterval(timerCountdown);
     }
   },1000);
@@ -192,7 +186,7 @@ function countdown(){
 function enterInitials(){
 
   // clearInterval(timerCountdown);
-  console.log('enterInitials is running.');
+  // console.log('enterInitials is running.');
   questionBox.classList.add('hidden');
   questionEl.classList.add('hidden');
   timeDisplay.classList.add('hidden');
@@ -202,21 +196,27 @@ function enterInitials(){
   // console.log('Initials entered: ', intialsVal);
 }
 
+//Stores the score in local storage, displays scores, and calls sort function to 
+//put scores in order
 function storeScore(value){
   resultsDisplay.classList.add('hidden');
   submitbtn.classList.add('hidden');
   scoresDisplay.classList.remove('hidden');
-
-  console.log('the initials input are ', value, 'Score: ', totalScore);
-
-    
+  // console.log('the initials input are ', value, 'Score: ', totalScore); 
+  
+  //Create var storedScores to either get the array and hold it, or make the array 
   var storedScores = JSON.parse(localStorage.getItem('highscoreArr')) || [];
+  
+  //newScore holds the values you want to put into the array.
   var newScore = {userInitials: value, score: totalScore};
+
   // console.log("Before push: ", storedScores);
   storedScores.push(newScore);
+
+  //Turns the array back into a string so it can be stored in local storage
   localStorage.setItem('highscoreArr', JSON.stringify(storedScores));
 
-  console.log("After push: ", storedScores);
+  // console.log("After push: ", storedScores);
 
   //Sort the scores in the array from highest to lowest
   sortScores(storedScores);
@@ -227,12 +227,11 @@ function storeScore(value){
     var l = document.createElement('p');
     var initials = s.userInitials
     l.innerText = (initials + ': ' + s.score);
-
     highscoreList.appendChild(l);
-
   }
 }
 
+//Sorts the scores
 function sortScores(x){
   x.sort(function(a,b) {
     return b.score-a.score
