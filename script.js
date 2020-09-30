@@ -3,9 +3,9 @@ var timer = 60;
 var score=0;
 var totalScore;
 var isWrong = false;
-var highscoreArr = [
-  {userInitials: "", score: ""}
-];
+// var highscoreArr = [
+//   {userInitials: "", score: ""}
+// ];
 
 //current index of myQuestions
 var i = 0;
@@ -213,25 +213,27 @@ function storeScore(value){
     // s.score = totalScore;
     // localStorage.setItem('highscores', JSON.stringify(highscoreArr));
     // var storedScores = JSON.parse(localStorage.getItem("highScores"));
-  localStorage.setItem('highscoreArr', JSON.stringify(highscoreArr));
-  var storedScores = JSON.parse(localStorage.getItem('highscoreArr'));
+  var storedScores = JSON.parse(localStorage.getItem('highscoreArr')) || [];
   var newScore = {userInitials: value, score: totalScore};
-  console.log("Before push: ", highscoreArr);
+  // console.log("Before push: ", storedScores);
   storedScores.push(newScore);
-  console.log("After push: ", highscoreArr);
+  localStorage.setItem('highscoreArr', JSON.stringify(storedScores));
+
+  console.log("After push: ", storedScores);
 
 
-  // for(var j = 0; j<highscoreArr.length; j++){
-    // var s = highscoreArr[j];  
-    // var p = document.createElement('p');
+  for(var j = 0; j<storedScores.length; j++){
+    var s = storedScores[j];  
+    var l = document.createElement('li');
+    l.innerText = ('I just got added to the page');
     // p.innerText = s.userInitials, s.score;
     // var p = document.createElement('p');
     // p.textContent(${s.userInitials}: ${s.score}));
-    // highscoreList.appendChild(p);
+    highscoreList.appendChild(l);
 
     
 
-  // }
+  }
 }
 
 
