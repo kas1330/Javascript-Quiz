@@ -160,6 +160,7 @@ function countdown(){
     if(timer === 0){
       console.log('Timer = 0 if statement running.');
       enterInitials();
+      clearInterval(timerCountdown);
     }
   },1000);
 
@@ -184,17 +185,22 @@ function storeScore(value){
 
   console.log('the initials input are ', value, 'Score: ', totalScore);
 
-  localStorage.setItem('highscores', highscoreArr);
-
+  
   for(var j = 0; j<highscoreArr.length; j++){
     var s = highscoreArr[j];
     s.userInitials = value;
     s.score = totalScore;
+    localStorage.setItem('highscores', JSON.stringify(highscoreArr));
+    var storedScores = JSON.parse(localStorage.getItem("highScores"));
+
+
+    
     // var p = document.createElement('p');
     // p.innerText = s.userInitials, s.score;
-    var p = document.createElement('p');
-    p.textContent(${s.userInitials}: ${s.score}));
-    highscoreList.appendChild(p);
+    // var p = document.createElement('p');
+    // p.textContent(${s.userInitials}: ${s.score}));
+    // highscoreList.appendChild(p);
+
     
 
   }
