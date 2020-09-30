@@ -46,22 +46,43 @@ const myQuestions = [
 
     },
     {
-      question: "Question 2?",
+      question: "Where is the correct place to insert JavaScript?",
       answers: [
-        {answerTxt: "one", correct: false},
-        {answerTxt: "two", correct: false},
-        {answerTxt: "three", correct: true},
-        {answerTxt: "four", correct: false}
+        {answerTxt: "a. The <head> section", correct: false},
+        {answerTxt: "b. The <head> and <body> are both correct", correct: false},
+        {answerTxt: "c. The <body> section", correct: true},
+        {answerTxt: "d. Anywhere", correct: false}
       ],
 
     },
     {
-      question: "Question 3?",
+      question: "What is the correct syntax for referring to an external script?",
       answers: [
-        {answerTxt: "one", correct: false},
-        {answerTxt: "two", correct: false},
-        {answerTxt: "three", correct: false},
-        {answerTxt: "four", correct: true}
+        {answerTxt: "a. <script href= 'xyz.js'>", correct: false},
+        {answerTxt: "b. <script source= 'xyz.js'>", correct: false},
+        {answerTxt: "c. <script name= 'xyz.js'>", correct: false},
+        {answerTxt: "d. <script src= 'xyz.js'>", correct: true}
+      ]
+
+    },
+    {
+      question: "How do you write 'Hello World to an alert box'?",
+      answers: [
+        {answerTxt: "a. alert('Hello World')", correct: true},
+        {answerTxt: "b. prompt('Hello World')", correct: false},
+        {answerTxt: "c. msg('Hello World')", correct: false},
+        {answerTxt: "d. alerBox('Hello World')", correct: false}
+      ]
+
+    },
+
+    {
+      question: "How do you write a function in JavaScript?",
+      answers: [
+        {answerTxt: "a. var function = myFunction()", correct: false},
+        {answerTxt: "b. function myFunction()", correct: true},
+        {answerTxt: "c. function = MyFunction()", correct: false},
+        {answerTxt: "d. function:myFuntion()", correct: false}
       ]
 
     }
