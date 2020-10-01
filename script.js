@@ -44,8 +44,8 @@ const myQuestions = [
       question: "Where is the correct place to insert JavaScript?",
       answers: [
         {answerTxt: "a. The <head> section", correct: false},
-        {answerTxt: "b. The <head> and <body> are both correct", correct: false},
-        {answerTxt: "c. The <body> section", correct: true},
+        {answerTxt: "b. The <head> and <body> are both correct", correct: true},
+        {answerTxt: "c. The <body> section", correct: false},
         {answerTxt: "d. Anywhere", correct: false}
       ],
 
