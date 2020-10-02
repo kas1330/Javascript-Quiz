@@ -28,6 +28,6 @@
 
 Link to deployed app: https://kas1330.github.io/Javascript-Quiz/
 
-<img src='jsQuiz.png' alt='Start button page of quiz'>
+<img src='jsQuiz.PNG' alt='Start button page of quiz'>
 
-<img src='jsQuiz2.png' alt='Question page of quiz'>
+<img src='jsQuiz2.PNG' alt='Question page of quiz'>
