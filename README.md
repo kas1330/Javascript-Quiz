@@ -23,7 +23,8 @@
     local storage and user should be shown a list of their high scores.
 16. The high scores should be shown from Highest to lowest.
 17. Just discovered that results page does not automatically come up if 
-    time hits 0. I can't figure out why.
+    time hits 0. I can't figure out why. --Fixed 10/1/2020
+18. Score now shows a score of 0 instead of undefined if all answers are wrong.
 
 Link to deployed app: https://kas1330.github.io/Javascript-Quiz/
 

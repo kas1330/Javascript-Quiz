@@ -1,7 +1,7 @@
 
-var timer = 60;
+var timer = 20;
 var score=0;
-var totalScore;
+var totalScore = 0;
 var isWrong = false;
 
 //current index of myQuestions
@@ -86,7 +86,7 @@ const myQuestions = [
  //called when the start button is pressed
 function startQuiz(){
     countdown();
-    console.log("startQuiz is running");
+    // console.log("startQuiz is running");
     startbtn.classList.add('hidden');
     questionBox.classList.remove('hidden');
     setQuestion();
@@ -133,7 +133,8 @@ function resetForm(){
 
 //Checks what was chosen and if it was correct, increases and decreases score
 function chooseAnswer(e){
-    console.log("chooseAnswer is running");
+    // console.log("chooseAnswer is running");
+
     //Which button was chosen
     var selectedAns = e.target;
     //Was answer correct
@@ -168,13 +169,13 @@ function countdown(){
   timeDisplay.classList.remove('hidden');
   var timerCountdown = setInterval(function(){
     if(isWrong){
-      console.log("If statement isWrong is running.");
+      // console.log("If statement isWrong is running.");
       timer = timer - 10;
       isWrong = false;
     }
     timer--;
     timeDisplay.textContent = timer; 
-    if(timer === 0){
+    if(timer <= 0){
       // console.log('Timer = 0 if statement running.');
       enterInitials();
       clearInterval(timerCountdown);    
